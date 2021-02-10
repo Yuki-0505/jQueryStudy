@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+    $(function() {
+      var $div = $('div')
+
+      // 获取元素距离document的top和left
+      console.log($div.offset())
+
+      // 获取元素距离上一级定位元素的top和left
+      console.log($div.position())
+
+      // 被卷曲隐藏的宽高
+      console.log($div.scrollTop())
+      console.log($div.scrollLeft())
+
+    })
+  </script>
+</body>
+
+</html>

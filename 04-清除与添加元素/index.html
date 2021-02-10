@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+    $(function() {
+      // html('')方式不安全，不会移除绑定的事件，导致内存泄漏
+      $('ul').html('')
+      // 清除ul下的所有li
+      $('ul').empty()
+      // 移除包括自身
+      $('ul').remove()
+
+      // 克隆 true表示绑定事件也会被克隆
+      var $uls = $('ul').clone(true)
+      // 追加
+      $('body').append($uls)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 5px solid black;
+      margin: 20px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div>div</div>
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+    $(function() {
+      var $div = $('div')
+
+      // content的宽高
+      console.log($div.width())
+      console.log($div.height())
+
+      // 包含padding
+      console.log($div.innerWidth())
+      console.log($div.innerHeight())
+
+      // 包含border
+      console.log($div.outerWidth())
+      console.log($div.outerHeight())
+
+      // 包含margin
+      console.log($div.outerWidth(true))
+      console.log($div.outerHeight(true))
+
+      // 页面可视区宽高
+      console.log($(window).outerWidth(true))
+      console.log($(window).outerHeight(true))
+    })
+  </script>
+</body>
+
+</html>

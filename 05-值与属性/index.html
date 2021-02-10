@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .pink {
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="txt">
+  <img src="" alt="" class="">
+  <input type="checkbox" id="checkbox">
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+    // 设置value
+    $('#txt').val('hello')
+    console.log($('input').val())
+
+    // 设置属性
+    $('#txt').attr('class', 'pink')
+    $('img').attr('src', '../img/yui.jpg')
+    $('img').attr({
+      name: 'yui',
+      width: 100,
+      height: 100
+    })
+    // 获取属性
+    console.log($('img').attr('name'))
+
+    // 原生js获取和设置属性
+    document.querySelector('#checkbox').checked = true
+    console.log(document.querySelector('#checkbox').checked)
+    // 对checked/selected/disabled这类boolean类型的属性，需要使用prop()
+    $('#checkbox').prop('checked', false)
+    console.log($('#checkbox').prop('checked'))
+  </script>
+</body>
+</html>

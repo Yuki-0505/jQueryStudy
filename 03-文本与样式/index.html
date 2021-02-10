@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .green {
+      background-color: green;
+    }
+    .fontSize {
+      font-size: 40
+    }
+  </style>
+</head>
+
+<body>
+  <div id="one">hello</div>
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+
+    console.log($('div').text())
+    $('div').text('你好')
+
+    // 行内样式
+    console.log($('div').css('width'))
+    console.log($('div').css('background-color'))
+    // $('div').css('backgroundColor', 'pink')
+    // $('div').css({
+    //   width: '100px',
+    //   height: 200,
+    //   border: '1px solid red'
+
+    // })
+
+    // 添加类
+    $('#one').addClass('green fontSize')
+    // 判断类
+    console.log($('#one').hasClass('green'))
+    // 移除类
+    $('#one').removeClass('green fontSize')
+    // 移除所有
+    $('#one').removeClass()
+
+  </script>
+</body>
+
+</html>
