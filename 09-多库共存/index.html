@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script src="../js/jquery.min.js"></script>
+
+  <script>
+    // 释放$控制权
+    // jQuery未释放
+    $.noConflict()
+
+    // 查看版本
+    console.log(jQuery.prototype.jquery)
+    // > 1.12.4
+    console.log($.prototype.jquery)
+    // > 3.5.1
+
+    // 替代
+    console.log(_$.prototype.jquery)
+    // > 1.12.4
+  </script>
+
+</body>
+</html>
