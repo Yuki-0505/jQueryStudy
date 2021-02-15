@@ -29,6 +29,11 @@
       var $uls = $('ul').clone(true)
       // 追加
       $('body').append($uls)
+      // 添加到最前面
+      $('body').prepend($uls)
+      // 添加的元素与原元素同级
+      $('body').after($uls)
+      $('body').before($uls)
     })
   </script>
 </body>
