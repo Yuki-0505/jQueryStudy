@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+  <p></p>
+  <script>
+    // innerText不识别标签
+    let div = document.querySelector('div')
+    div.innerText = '<strong>123</strong>'
+    let p = document.querySelector('p')
+    p.innerHTML = 'ababab<span>123</span>'
+
+    // innerText自动去除标签，只保留文本
+    console.log(p.innerText)
+    console.log(p.innerHTML)
+
+  </script>
+</body>
+
+</html>
