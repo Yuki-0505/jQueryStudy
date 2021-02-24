@@ -9,6 +9,7 @@
     .green {
       background-color: green;
     }
+
     .fontSize {
       font-size: 40
     }
@@ -18,6 +19,16 @@
 <body>
   <div id="one">hello</div>
   <script src="../js/jquery-3.5.1.js"></script>
+  <script>
+    let div = document.querySelector('div')
+    div.style.color = 'red'
+
+    div.className = 'fontSize'
+
+    div.classList.add('green')
+    div.classList = 'green'
+
+  </script>
   <script>
 
     console.log($('div').text())

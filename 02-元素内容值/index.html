@@ -10,6 +10,7 @@
 <body>
   <div></div>
   <p></p>
+  <input type="text" value="输入内容">
   <script>
     // innerText不识别标签
     let div = document.querySelector('div')
@@ -20,6 +21,11 @@
     // innerText自动去除标签，只保留文本
     console.log(p.innerText)
     console.log(p.innerHTML)
+
+    // 单标签使用value属性获取内容
+    let input = document.querySelector('input')
+    console.log(input.value)
+    input.value = '针不戳'
 
   </script>
 </body>

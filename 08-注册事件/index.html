@@ -9,12 +9,27 @@
 
 <body>
   <button>点击</button>
+  <input type="text" value="知道">
   <script src="../js/jquery-3.5.1.js"></script>
   <script>
-    $(function() {
+    let input = document.querySelector('input')
+    // 获取到焦点
+    input.onfocus = function () {
+      console.log('得到焦点')
+    }
+    input.onblur = function () {
+      console.log('失去焦点')
+    }
+    /**
+     * onmouseover  鼠标经过
+     * onmouseout   鼠标离开
+     */
+  </script>
+  <script>
+    $(function () {
       // on委托注册
       // 动态注册
-      $('body').on('click', 'button', function() {
+      $('body').on('click', 'button', function () {
         $('body').append($('<button>点击</button>'))
       })
       // 解绑所有事件
