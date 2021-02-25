@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="checkbox" id="all">全选
+  <div>
+    <input type="checkbox">选项1
+    <input type="checkbox">选项2
+    <input type="checkbox">选项3
+    <input type="checkbox">选项4
+  </div>
+  <script>
+    let all = document.querySelector('#all')
+    let inputs = document.querySelector('div').querySelectorAll('input')
+    all.onclick = function () {
+      let flag = all.checked
+      all.checked = flag
+      inputs.forEach(input => input.checked = flag)
+    }
+    inputs.forEach(function (input) {
+      input.onclick = function () {
+        let flag = true
+        inputs.forEach(function (elem) {
+          if (!elem.checked) flag = false
+        })
+        all.checked = flag
+      }
+    })
+  </script>
+</body>
+
+</html>
