@@ -21,6 +21,16 @@
     // 原生js获取和设置属性
     document.querySelector('#checkbox').checked = true
     console.log(document.querySelector('#checkbox').checked)
+
+    let input = document.querySelector('input')
+
+    // 自定义属性
+    input.setAttribute('data-index', 2)
+    console.log(input.getAttribute('data-index'))
+    // h5自定义属性值，h5规范data-开头
+    input.setAttribute('data-list-name', 'andy')
+    console.log(input.dataset.listName)
+    console.log(input.dataset['listName'])
   </script>
   <script>
     // 设置value

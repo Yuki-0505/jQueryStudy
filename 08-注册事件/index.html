@@ -10,20 +10,73 @@
 <body>
   <button>点击</button>
   <input type="text" value="知道">
+  <ul>
+    <li>知否知否，应是绿肥红瘦</li>
+    <li>知否知否，应是绿肥红瘦</li>
+    <li>知否知否，应是绿肥红瘦</li>
+    <li>知否知否，应是绿肥红瘦</li>
+  </ul>
   <script src="../js/jquery-3.5.1.js"></script>
   <script>
+    /**
+     * 事件捕获
+     * 先执行父元素的事件，再执行子元素的事件
+     * 事件冒泡
+     * 先执行子元素的事件，再执行父元素的事件
+     */
     let input = document.querySelector('input')
+
+    function fn(event) {
+      console.log('addEventListener click')
+    }
+    // 方法监听，true表示事件捕获，false表示事件冒泡，默认false
+    input.addEventListener('click', fn, true)
+    // 移除事件
+    input.removeEventListener('click', fn)
+
     // 获取到焦点
-    input.onfocus = function () {
+    input.onfocus = function (event) {
       console.log('得到焦点')
     }
-    input.onblur = function () {
+    input.onblur = function (event) {
       console.log('失去焦点')
     }
+    // 删除事件
+    input.onclick = null
     /**
      * onmouseover  鼠标经过
      * onmouseout   鼠标离开
+     * onmousemove  鼠标移动
+     * onmouseup    鼠标弹起
+     * onmousedown  鼠标按下
+     * 以下事件没有事件冒泡
+     * onfocus
+     * onblur
+     * onmouseenter
+     * onmouseleave
      */
+    /**
+     * event的属性
+     * target   触发事件的元素，在事件冒泡中是子元素
+     * type     事件的类型
+     * preventDefault()   阻止默认事件，如<a/>的跳转
+     * 在回调函数中 return false 也可阻止默认事件
+     * stopPropagation()  阻止冒泡，event不会再向上呈递
+     * clientX clientY  相对于浏览器窗口的坐标
+     * pageX pageY      相对于文档页面的坐标
+     * screenX screenY  相对于屏幕的坐标
+     */
+    /**
+     * 事件委托，将事件监听器设置在父节点上，利用事件冒泡影响子节点
+     */
+    let ul = document.querySelector('ul')
+    ul.addEventListener('mouseover', function (e) {
+      e.target.style.backgroundColor = 'pink'
+    })
+    ul.addEventListener('mouseout', function (e) {
+      e.target.style.backgroundColor = 'white'
+    })
+
   </script>
   <script>
     $(function () {
@@ -39,6 +92,7 @@
       // 代码方式触发事件
       $('button').trigger('click')
     })
+
   </script>
 </body>
 

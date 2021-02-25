@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <img src="../img/yui.jpg" alt="">
+  <script>
+    let pic = document.querySelector('img')
+    document.addEventListener('mousemove', function (e) {
+      let left = e.pageX - 30
+      let top = e.pageY - 30
+      pic.style.left = left + 'px'
+      pic.style.top = top + 'px'
+    })
+
+  </script>
+</body>
+
+</html>
