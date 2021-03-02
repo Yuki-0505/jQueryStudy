@@ -50,8 +50,8 @@
      * onmouseup    鼠标弹起
      * onmousedown  鼠标按下
      * 以下事件没有事件冒泡
-     * onfocus
-     * onblur
+     * onfocus      得到焦点
+     * onblur       失去焦点
      * onmouseenter
      * onmouseleave
      */
@@ -65,6 +65,7 @@
      * clientX clientY  相对于浏览器窗口的坐标
      * pageX pageY      相对于文档页面的坐标
      * screenX screenY  相对于屏幕的坐标
+     * keyCode    键盘码
      */
     /**
      * 事件委托，将事件监听器设置在父节点上，利用事件冒泡影响子节点
@@ -76,6 +77,11 @@
     ul.addEventListener('mouseout', function (e) {
       e.target.style.backgroundColor = 'white'
     })
+    /**
+     * onkeyup    不区分大小写，a和A的keyCode都为65
+     * onkeydown  不区分大小写
+     * onkeypress 按键按下，不能识别功能键，如ctrl，shift，方向键等，先于keydown事件触发
+     */
 
   </script>
   <script>

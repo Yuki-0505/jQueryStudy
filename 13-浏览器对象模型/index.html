@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Browser object model -->
+  <script>
+    /**
+     * 页面加载事件
+     * 窗口加载完毕后执行
+     * DOMContentLoaded 页面所有元素加载完后执行，不需要等待所有图片等加载完，先于onload触发
+     */
+    window.onload = function () {
+
+    }
+    window.addEventListener('load', function () {
+      let btn = document.querySelector('button')
+      btn.addEventListener('click', function (e) {
+        alert('点我')
+      })
+    })
+    window.addEventListener('DOMContentLoaded', function () {
+      let btn = document.querySelector('button')
+      btn.addEventListener('click', function (e) {
+        alert('点我33')
+      })
+    })
+    /**
+     * 窗口大小变化事件
+     * onresize
+     */
+    window.onresize = function (e) {
+      console.log(window.innerWidth)
+    }
+    /**
+     * 定时器
+     * setTimeout
+     * clearTimeout
+     * setInterval
+     * clearInterval
+     */
+
+    /**
+     * window.location对象
+     * 属性：
+     * href 整个url
+     * host 主机域名
+     * port 端口
+     * pathname 路径
+     * search 参数，返后?开头的字符串，可用正则提取
+     * hash #后的内容
+     * 方法：
+     * assign()   重定向，有历史记录
+     * replace()  替换当前页面，无历史记录，不能后退
+     * reload()   重新加载页面，刷新
+     */
+
+    /**
+     * window.navigation对象
+     * 系统和浏览器信息
+     */
+
+    /**
+      * window.history对象
+      * back()    后退
+      * forward() 前进
+      * go(n: number)      跳转
+      */
+  </script>
+  <button>按钮</button>
+</body>
+
+</html>
