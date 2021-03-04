@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <button>点击</button>
+  <div></div>
+  <script>
+    /**
+     * 原理：通过setInterval()不断移动元素
+     * 必须有定位
+     */
+    function animation(obj, target, callback) {
+      clearInterval(obj.timer)
+      obj.timer = setInterval(function () {
+        let step = (target - obj.offsetLeft) / 15
+        step = step > 0 ? Math.ceil(step) : Math.floor(step)
+        obj.style.left = obj.offsetLeft + step + 'px'
+        if (target === obj.offsetLeft) {
+          clearInterval(obj.timer)
+          callback(obj)
+        }
+      }, 10)
+    }
+    let div = document.querySelector('div')
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', function (e) {
+      console.log(div.offsetLeft)
+      if (div.flag) {
+        animation(div, 0, function (obj) {
+          obj.style.backgroundColor = 'pink'
+          obj.flag = false
+        })
+      } else {
+        animation(div, 400, function (obj) {
+          obj.style.backgroundColor = 'red'
+          obj.flag = true
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>

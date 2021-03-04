@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid red;
+      margin: 10px;
+      background-color: pink;
+      position: relative;
+    }
+
+    p {
+      width: 40px;
+      padding: 30px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+  <div></div>
+  <div></div>
+  </p>
+  <script>
+    /**
+     * offset 相对于父级定位元素的偏移量
+     * offsetParent 返回父级定位元素，如果没有则返回body
+     * offsetTop
+     * offsetRight
+     * offsetWidth/offsetHeight 包含border、padding、content，不带单位
+     *
+     * style.width
+     * 只能获得和修改行内样式
+     * 不包含padding、border
+     * 带单位
+     */
+
+    /**
+     * clientTop/clientLeft 边框大小border
+     * clientWidth/clientHeight 包含padding、content
+     */
+    let div = document.querySelector('div')
+    console.log(div.clientTop)
+    console.log('clientWidth', div.clientWidth)
+
+    /**
+     * scrollTop/scrollLeft 被卷部分
+     * scrollWidth/scrollHeight padding、content 超出部分也会被算进，带单位
+     * onscroll 滚动条事件
+     */
+    console.log('scrollWidth', div.scrollWidth)
+  </script>
+</body>
+
+</html>
